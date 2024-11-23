@@ -30,6 +30,12 @@ public class EmplacementController {
         return new ResponseEntity<>(emplacements, HttpStatus.OK);
     }
 
+    @GetMapping("/populate")
+    public ResponseEntity<String> populateDb() {
+        emplacementService.PopulateDb();
+        return new ResponseEntity<>("Database populated", HttpStatus.OK);
+    }
+
     // Récupérer un emplacement par ID
     @GetMapping("/{id}")
     public ResponseEntity<Emplacement> getEmplacementById(@PathVariable Long id) {
