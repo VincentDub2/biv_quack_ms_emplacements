@@ -1,7 +1,6 @@
 package polytech.service_emplacements.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import polytech.service_emplacements.model.Emplacement;
@@ -10,7 +9,6 @@ import polytech.service_emplacements.service.EmplacementService;
 import java.util.List;
 import java.util.Optional;
 
-//@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/")
 public class EmplacementController {
@@ -25,44 +23,28 @@ public class EmplacementController {
     // Récupérer tous les emplacements
     @GetMapping
     public ResponseEntity<List<Emplacement>> getAllEmplacements() {
-        System.out.println("GET /emplacement recu");
         List<Emplacement> emplacements = emplacementService.getAllEmplacements();
-        return new ResponseEntity<>(emplacements, HttpStatus.OK);
-    }
-
-    @GetMapping("/populate")
-    public ResponseEntity<String> populateDb() {
-        emplacementService.PopulateDb();
-        return new ResponseEntity<>("Database populated", HttpStatus.OK);
-    }
-
-    // Récupérer un emplacement par ID
-    @GetMapping("/{id}")
-    public ResponseEntity<Emplacement> getEmplacementById(@PathVariable Long id) {
-        Optional<Emplacement> emplacement = emplacementService.getEmplacementById(id);
-        return emplacement.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
-                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+        return ResponseEntity.ok(emplacements);
     }
 
     // Créer un nouvel emplacement
     @PostMapping
     public ResponseEntity<Emplacement> createEmplacement(@RequestBody Emplacement emplacement) {
         Emplacement newEmplacement = emplacementService.createEmplacement(emplacement);
-        return new ResponseEntity<>(newEmplacement, HttpStatus.CREATED);
+        return ResponseEntity.status(201).body(newEmplacement);
     }
 
-    // Mettre à jour un emplacement existant
+    // Mettre à jour un emplacement
     @PutMapping("/{id}")
     public ResponseEntity<Emplacement> updateEmplacement(@PathVariable Long id, @RequestBody Emplacement emplacement) {
         Optional<Emplacement> updatedEmplacement = emplacementService.updateEmplacement(id, emplacement);
-        return updatedEmplacement.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
-                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+        return updatedEmplacement.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
     }
 
     // Supprimer un emplacement
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteEmplacement(@PathVariable Long id) {
-        boolean isDeleted = emplacementService.deleteEmplacement(id);
-        return isDeleted ? new ResponseEntity<>(HttpStatus.NO_CONTENT) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        boolean deleted = emplacementService.deleteEmplacement(id);
+        return deleted ? ResponseEntity.noContent().build() : ResponseEntity.notFound().build();
     }
 }

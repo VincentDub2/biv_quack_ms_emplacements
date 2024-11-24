@@ -24,8 +24,8 @@ public class Emplacement {
     private String description;
 
     @ElementCollection
-    @CollectionTable(name = "emplacement_commodites", joinColumns = @JoinColumn(name = "emplacement_id"))
-    @Column(name = "commodite")
+    @CollectionTable(name = "commodites")
+    @Column(name = "commodites", columnDefinition = "TEXT")
     private List<String> commodites;
 
     @Lob
@@ -41,10 +41,10 @@ public class Emplacement {
     private Double prixParNuit;
 
     @Column(nullable = false)
-    private String dateDebut; // Disponibilité - Date de début
+    private String dateDebut;
 
     @Column(nullable = false)
-    private String dateFin;   // Disponibilité - Date de fin
+    private String dateFin;
 
     // Constructeur par défaut
     protected Emplacement() {}
