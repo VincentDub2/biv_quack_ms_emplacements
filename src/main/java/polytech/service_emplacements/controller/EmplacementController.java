@@ -65,4 +65,15 @@ public class EmplacementController {
         boolean isDeleted = emplacementService.deleteEmplacement(id);
         return isDeleted ? new ResponseEntity<>(HttpStatus.NO_CONTENT) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+
+    // Récupérer les emplacements par ID d'hôte
+    @GetMapping("/host/{idHote}")
+    public ResponseEntity<List<Emplacement>> getEmplacementsByHoteId(@PathVariable Long idHote) {
+        List<Emplacement> emplacements = emplacementService.getEmplacementsByHoteId(idHote);
+        if (emplacements.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(emplacements, HttpStatus.OK);
+}
+
 }
