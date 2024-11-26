@@ -28,8 +28,8 @@ public class Emplacement {
     @Column(name = "commodite")
     private List<String> commodites;
 
-    @Lob
-    private byte[] image;
+    @Column(columnDefinition = "TEXT")
+    private String image;
 
     @Column(nullable = false)
     private Double latitude;
