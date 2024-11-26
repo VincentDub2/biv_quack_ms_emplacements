@@ -50,7 +50,7 @@ public class Emplacement {
     protected Emplacement() {}
 
     public Emplacement(Long idHote, String nom, String adresse, String description, List<String> commodites,
-                       byte[] image, Double latitude, Double longitude, Double prixParNuit, String dateDebut, String dateFin) {
+                       String image, Double latitude, Double longitude, Double prixParNuit, String dateDebut, String dateFin) {
         this.idHote = idHote;
         this.nom = nom;
         this.adresse = adresse;
@@ -113,11 +113,11 @@ public class Emplacement {
         this.commodites = commodites;
     }
 
-    public byte[] getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
