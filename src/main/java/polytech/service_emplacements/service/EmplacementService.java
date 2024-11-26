@@ -27,7 +27,7 @@ public class EmplacementService {
                 "Chemin des Oliviers, Sussargues",
                 "Un charmant emplacement entouré d'oliviers.",
                 List.of("Eau potable", "Électricité"),
-                null,
+                "https://www.visitdenmark.fr/sites/visitdenmark.com/files/2020-05/2MOsskov-shelter-229505_Shelters_ved_Store_kss.jpg",
                 43.714158,
                 4.003973,
                 25.0,
@@ -36,12 +36,12 @@ public class EmplacementService {
         );
 
         Emplacement emplacement2 = new Emplacement(
-                2L,
+                1L,
                 "Bivouac La Garrigue",
                 "Route de la Garrigue, Sussargues",
                 "Idéal pour les amateurs de nature sauvage.",
                 List.of("Toilettes sèches", "Barbecue"),
-                null,
+                "https://voyageforum.info/images/hd/posts/openmedium/1511769264-wO8nr2WXGVjDAki.jpg",
                 43.712158,
                 4.005973,
                 30.0,
@@ -50,12 +50,12 @@ public class EmplacementService {
         );
 
         Emplacement emplacement3 = new Emplacement(
-                3L,
+                1L,
                 "Aire de Camping Les Vignes",
                 "Rue des Vignes, Sussargues",
                 "Proche des vignobles, parfait pour une escapade tranquille.",
                 List.of("Wi-Fi", "Douche chaude"),
-                null,
+                "https://www.visitdenmark.fr/sites/visitdenmark.com/files/2022-08/slaggaard-banke-shelter-naturlejrplads-hanne-nielsen-2021-6-1200px.jpg",
                 43.711158,
                 4.002973,
                 35.0,
@@ -64,12 +64,12 @@ public class EmplacementService {
         );
 
         Emplacement emplacement4 = new Emplacement(
-                4L,
+                2L,
                 "Espace Nature",
                 "Avenue de la Nature, Sussargues",
                 "Un emplacement spacieux avec une vue dégagée.",
                 List.of("Table de pique-nique", "Point d'eau"),
-                null,
+                "https://www.das-baumhaushotel.de/images/02_Wohnen/01_stadl/01_Stadl_Aussenansicht_fern.jpg",
                 43.715158,
                 4.004973,
                 20.0,
@@ -78,12 +78,12 @@ public class EmplacementService {
         );
 
         Emplacement emplacement5 = new Emplacement(
-                5L,
+                3L,
                 "Aire de Repos Les Pins",
                 "Impasse des Pins, Sussargues",
                 "Idéal pour se reposer sous les pins ombragés.",
                 List.of("Eau potable", "Parking gratuit"),
-                null,
+                "https://www.visitdenmark.fr/sites/visitdenmark.com/files/2020-05/rorervig-centrets-shelter-01.jpg",
                 43.713658,
                 4.007973,
                 15.0,
@@ -92,12 +92,12 @@ public class EmplacementService {
         );
 
         Emplacement emplacement6 = new Emplacement(
-                6L,
+                3L,
                 "Bivouac du Lac",
                 "Chemin du Lac, Sussargues",
                 "Proche d'un petit lac pour une expérience unique.",
                 List.of("Pêche autorisée", "Barbecue"),
-                null,
+                "https://campspace.com/media/detail/uploads/space/hc/_d/f2/hc_df2797237efff3f1a547922516a3f7d1.jpeg",
                 43.710158,
                 4.001973,
                 40.0,
